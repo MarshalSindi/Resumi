@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <title>User</title>
+</head>
+<body class="bg-light">
+   
+    
+        <div class="container mt-3">
+            {% block content %}
+                <div class="row">
+                    <div class="col-md-6 offset-3 text-center">
+                        <img src="{% static 'img/resumeHome.png' %}" class="img-home mb-2" alt="Resumi">
+                        <div class="card card-body bg-light">
+                            <div class="col-md-6 offset-3">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        {{form.username}}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        {{form.email}}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password1">Password</label>
+                                        {{form.password1}}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password2">Confirm Password</label>
+                                        {{form.password2}}
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary">Create</button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+
+
+    <script src="{% static '/js/jquery.min.js' %}"></script>
+    <script src="{% static '/js/popper.min.js' %}"></script>
+    <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% extends 'myresume/main.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-3">
+            <div class="card card-body">
+                <h4 class="text-center text-info">Profile</h4>
+                <img src="" alt="" class="pic">
+                
+            </div>
+        </div>
+        <div class="col-8 ml-3">
+            <div>
+                <h3 class="text-info">About:</h3>
+                <div class="card card-body "> 
+                    
+                </div>
+            </div>
+            <div>
+                <h3 class="text-info">Education:</h3>
+                <div class="card card-body "> 
+                    <div class="table-responsive">
+                        <table class="table table-hover ">
+                            <thead>
+                                <tr class="text-info">
+                                    <th>Field</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for education in educations %}
+                                <tr>
+                                        <td>{{education.field}}</td>
+                                        <td>{{education.start_date}}</td>
+                                        <td>{{education.end_date}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        
+                          
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-info">Experiences:</h3>
+                <div class="card card-body "> 
+                    <div class="table-responsive">
+                        <table class="table table-hover ">
+                            <thead>
+                                <tr class="text-info">
+                                    <th>Job Title</th>
+                                    <th>Company</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for experience in experiences %}
+                                <tr>
+                                        <td>{{experience.job_title}}</td>
+                                        <td>{{experience.company}}</td>
+                                        <td>{{experience.start_date}}</td>
+                                        <td>{{experience.end_date}}</td>
+                                        
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        
+                          
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-info">Interest:</h3>
+                <div class="card card-body "> 
+                    <ul>
+                        {% for interest in interests %}
+                            <li>{{interest.description}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
