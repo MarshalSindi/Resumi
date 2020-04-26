@@ -38,10 +38,11 @@
                                         {{form.password2}}
                                     </div>
                                     
+                                    <a href="{% url 'login' %}" class="btn btn-info">Cancel</a>
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </form>
                             </div>
-                            
+                            {{form.errors}}
                         </div>
                         
                     </div>

@@ -1,0 +1,26 @@
+{% extends 'myresume/main.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-3">
+            <div class="card card-body">
+                <h4 class="text-center text-info">Profile</h4>
+                <a href="{% url 'home' %}" class="btn btn-warning"><i class="fas fa-user"></i> Back to Profile</a>
+                <hr>
+                <img src="{{request.user.person.profile_pic.url}}" alt="profile_pic" class="pic">
+                
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div>
+                
+                <div class="card card-body "> 
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <input type="submit" name="update information" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,10 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Person(models.Model):
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     fullname = models.CharField(max_length=100, null=True)
     email = models.CharField(max_length=100, null=True)
     phone = models.CharField(max_length=100, null=True)
+    profile_pic=models.ImageField(default='happy.png',null=True, blank=True)
     birthday = models.DateField(null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 

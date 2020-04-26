@@ -15,3 +15,9 @@ class CreateUserForm(UserCreationForm):
             'password1': forms.PasswordInput(attrs={'class':'form-control'}),
             'password2': forms.PasswordInput(attrs={'class':'form-control'}),
         }
+
+class PersonForm(ModelForm):
+    class Meta:
+        model = Person
+        fields = '__all__'
+        exclude = ['user']

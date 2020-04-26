@@ -5,8 +5,12 @@
         <div class="col-3">
             <div class="card card-body">
                 <h4 class="text-center text-info">Profile</h4>
-                <img src="" alt="" class="pic">
-                
+                <hr>
+                <a href="{% url 'settings' %}" class="btn btn-success"><i class="fas fa-tools"></i> Settings</a>
+                <hr>
+                <img src="{{request.user.person.profile_pic.url}}" alt="" class="pic">
+                <hr>
+                <h5 class="text-center">{{request.user.person.fullname}}</h5>
             </div>
         </div>
         <div class="col-8 ml-3">
